@@ -1,0 +1,48 @@
+CREATE TABLE `Data` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Time` int(11) NOT NULL,
+  `Accuracy` int(11) NOT NULL,
+  `WPM` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+)
+
+
+
+
+def reset_game(self):
+        self.screen.blit(self.open_img, (0,0))
+
+        pygame.display.update()
+        time.sleep(1)
+        
+        self.reset=False
+        self.end=False
+
+        self.input_text=''
+        self.word = ''
+        self.time_start = 0
+        self.total_time = 0
+        self.wpm = 0
+
+        # Get random sentence 
+        pygame.draw.rect(self.screen,(255,192,25), (150,250,350,50), 2)
+        self.word = self.get_sentence()
+        if (not self.word): self.reset_game()
+        #drawing heading
+        self.screen.fill((0,0,0))
+        self.screen.blit(self.bg,(0,0))
+        msg = "Typing Speed Test"
+        self.draw_text(self.screen, msg,90, 90,self.HEAD_C)  
+        # draw the rectangle for input box
+        pygame.draw.rect(self.screen,(255,192,25), (150,300,650,50), 2)
+
+        # draw the sentence string
+        self.draw_text(self.screen, self.word,200, 28,self.TEXT_C)
+        pygame.display.update()
+        
+        
+        
+if(x>=300 and x<=500 and y>=500 and self.end):
+    						x,y = pygame.mouse.get_pos()
+    						print('button was pressed at {0}'.format(mouse_pos))
+    						Game().run()
